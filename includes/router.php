@@ -33,6 +33,7 @@ function dispatch(string $uri, string $method): void {
   }
 
   // 3- file path - PHP file path
+  var_dump(getFilePath($uri, $method));die;
   $filePath = getFilePath($uri, $method);
   if(file_exists($filePath)) {
     include($filePath);
