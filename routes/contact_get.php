@@ -1,2 +1,2 @@
 <?php 
-renderView('contract_get');
+renderView('contact_get');

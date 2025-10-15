@@ -115,6 +115,6 @@
   </header>
   <nav>
     <a href="/">Home</a>
-    <a href="/contact">Constact Form</a>
+    <a href="/contact">Contact Form</a>
   </nav>
   <main>
