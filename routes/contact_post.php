@@ -1,7 +1,6 @@
 <?php
 // CSRF
 
-// getting the data:
 $name = $_POST['name'] ?? '';
 $email = $_POST['email'] ?? '';
 $message = $_POST['message'] ?? '';
@@ -14,5 +13,7 @@ if (empty($name) || empty($email) || empty($message)) {
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   badRequest("Email field is invalied");
 }
+
+connectDb();
 
 var_dump($name, $email, $message);die;
