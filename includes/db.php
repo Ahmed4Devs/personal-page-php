@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function connectDb(): PDO {
   $pdo = new PDO('sqlite:' . DB_DIR . '/' . 'db.sqlite');
@@ -7,11 +7,10 @@ function connectDb(): PDO {
 }
 
 function loadSchema(PDO $pdo, string $schemaFile): void {
-  $sql = file_get_contents($schemaFile);
-  if (false === $sql) {
-    die("Failed to load schema: $schemaFile");
+  $schema = file_get_contents($schemaFile);
+  if (!$schema) {
+    die("Failed to load schema from file: $schemaFile.");
   }
-
-  $pdo->exec($sql);
+  $pdo->exec($schema);
   echo "Schema loaded successfully.\n";
 }
