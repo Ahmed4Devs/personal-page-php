@@ -32,6 +32,11 @@ function serverError(string $message = 'Server Error'): void {
   exit;
 }
 
+function redirect(string $uri): void {
+  header("Location: $uri");
+  exit();
+}
+
 function dispatch(string $uri, string $method): void {
   // 1- normalize the URI: GET /geustbook -> routes/guestbook_get.php
   $uri = normailzeUri($uri);
