@@ -6,6 +6,7 @@ const INDEX_URI = '';
 const INDEX_ROUTE = 'index';
 
 function normailzeUri(string $uri): string {
+  $uri = strtok($uri, '?');
   $uri = strtolower(trim($uri, '/'));
   return $uri === INDEX_URI ? INDEX_ROUTE : $uri;
 }
